@@ -1,9 +1,9 @@
 # Patient Visit Tracker
 
-Requirement
-NodeJs (22.16.0)
-NPM (11.4.1)
-Postgres
+**Requirement**
+1. NodeJs (22.16.0)
+2. NPM (11.4.1)
+3. Postgres
 
 Backend:
 Tech: Express JS, Sequelize

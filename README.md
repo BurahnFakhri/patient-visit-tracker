@@ -7,7 +7,7 @@ NPM (11.4.1)
 Postgres
 
 **Backend**
-*Tech: Express JS, Sequelize*
+Tech: Express JS, Sequelize
 > cd projectDir/backend
 > npm i
 > past .env file which i have shared in email into .env.local

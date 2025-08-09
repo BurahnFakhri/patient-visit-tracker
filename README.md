@@ -6,7 +6,7 @@ NodeJs (22.16.0)
 NPM (11.4.1)
 Postgres
 
-**Backend**
+Backend:
 Tech: Express JS, Sequelize
 > cd projectDir/backend
 > npm i

@@ -2,9 +2,9 @@
 
 **Requirement**
 *Tech: Typescript, ReactJS, ShadCn, Redux Toolkit *
-> NodeJs (22.16.0)
-> NPM (11.4.1)
-> Postgres
+NodeJs (22.16.0)
+NPM (11.4.1)
+Postgres
 
 **Backend**
 *Tech: Express JS, Sequelize*

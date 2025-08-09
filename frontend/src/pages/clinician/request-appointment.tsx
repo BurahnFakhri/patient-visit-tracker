@@ -241,17 +241,14 @@ export default function RequestAppointment() {
     }
   };
 
-  const handleBackToDashboard = () => {
-    navigate("/patient/dashboard");
-  };
   // --------------- Form Screen ---------------
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-muted/30">
       <Header title="Request Appointment" userType="patient" userName="Sarah Johnson" />
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <Button variant="ghost" asChild className="mb-4">
-          <Link to="/patient/dashboard">
-            <ArrowLeft className="h-4 w-4 mr-2" /> Back to Dashboard
+          <Link to="/clinician/appointments">
+            <ArrowLeft className="h-4 w-4 mr-2" /> Back to Appointments
           </Link>
         </Button>
 

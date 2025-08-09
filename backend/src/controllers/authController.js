@@ -21,9 +21,10 @@ authController.login = async(req,res) => {
         user = await Patient.authenticate(email, password)
     }
     if(!user) {
-        return res.status(401).json({ 
+        return res.status(200).json({ 
             data: {},
-            error: 'Invalid email or password' 
+            message: 'Invalid email or password',
+            success: false 
         });
     }
     

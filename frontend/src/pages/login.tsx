@@ -15,6 +15,7 @@ import { Input } from "../components/ui/input";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 import { useDispatch } from "react-redux";
 import { setAuth } from "../store/slices/authSlice";
+import { useToast } from "../hooks/use-toast";
 
 // ✅ Zod schema
 const loginSchema = z.object({
@@ -30,6 +31,7 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export default function Login() {
+  const { toast } = useToast();
   const dispatch = useDispatch();
   const [selectedType, setSelectedType] = useState<"clinician" | "patient" | null>(null);
   const navigate = useNavigate();
@@ -51,6 +53,9 @@ export default function Login() {
         password: data.password,
         type: selectedType
       });
+      if(res.data.success === false) {
+        throw new Error(res.data.message);
+      }
       dispatch(setAuth({
         token: res.data.token,
         user: JSON.stringify(res.data.data),
@@ -60,8 +65,11 @@ export default function Login() {
       // Example: redirect to dashboard
       navigate(`/${selectedType}/dashboard`);
     } catch (err: any) {
-      console.error("Login error:", err.response?.data || err.message);
-      // Optionally show toast / error message
+      toast({
+        title: "Error",
+        description: err .message,
+        variant: "destructive",
+      });
     }
   };
 
